@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+@using (Ajax.BeginForm("Login", "Usuarios", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "divEmp" }))
+{
+    @Html.TextBox("userName", null, new { @class = "form-control" });
+    @Html.TextBox("passWord", null, new { @class = "form-control" });
+    <input type="submit" value="Login" class="btn btn-primary"/>
+}
+@using (Ajax.BeginForm("Pdf", "Usuarios", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "divEmp" }))
+{
+    <input type="submit" value="PDF" class="btn btn-warning" />
+}

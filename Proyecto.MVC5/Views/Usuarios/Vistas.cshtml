@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "View";
+}
+
+<h2>View</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+</table>
+@functions {
+    private string GetCookie()
+    {
+        var result = Request.Cookies["Usuarios"];
+        if (result != null)
+        {
+            return result.Value;
+        }
+        return result.Value;
+    }
+}
+<div>
+    @*@Html.Partial("Login")*@
+    @Html.Action("Cookie")
+    @*@{Html.RenderAction("Login")}*@
+    @*@{Html.RenderPartial("Login")}*@
+</div>
